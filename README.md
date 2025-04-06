@@ -13,7 +13,7 @@ If you want to learn more about Argo CD, please visit the [project page](https:/
 ## Quick Start
 use the script:
 ```
-curl -s https://raw.githubusercontent.com/fbarresi/play-with-argo-cd/refs/heads/main/install.sh | bash
+curl -s https://raw.githubusercontent.com/fbarresi/play-with-argo-cd/main/install.sh | bash
 ```
 
 ## Step by step guide
