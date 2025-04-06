@@ -70,6 +70,9 @@ kubectl port-forward --address 0.0.0.0 svc/argocd-server -n argocd 8080:443
 ### Done!
 Now you can start open the web UI the port 8080 and play with your minimal kubernetes instance with Argo CD.
 
+User: admin <br/>
+Password: `the initial password is prompted in the console`
+
 In Play-with-docker it works this way:
 ![image](https://github.com/user-attachments/assets/43c33057-dfa1-48ce-a697-3582e6c36375)
 
