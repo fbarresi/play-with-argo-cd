@@ -1,16 +1,19 @@
 # Play with Argo CD
 a repository guide for creating a k8s cluster with argo cd on demand
 
-The scripts in this repo were tested with [play-with-docker](https://labs.play-with-docker.com/): a wonderful plaform for play directly in the browser. (registration needed)
+The scripts in this repo were tested with [play-with-docker](https://labs.play-with-docker.com/) : a wonderful plaform to play directly in the browser. (registration needed)
 
-Of course you can use them even locally.
+Of course you can use them even locally. <br/>
+If you want to learn more about Argo CD, please visit the [project page](https://argoproj.github.io/cd/) or [GitOps](https://www.gitops.tech/)
 
-Before you start, make sure you can use a bash on your linux target machine as root.
+## Before you start
+- open [play-with-docker](https://labs.play-with-docker.com/) and create a node
+- (alternative) make sure you can use a bash on your linux target machine as root
 
 ## Quick Start
 use the script:
 ```
-curl -s https://raw.githubusercontent.com/fbarresi/play-with-argo-cd/main/install.sh | bash
+curl -s https://raw.githubusercontent.com/fbarresi/play-with-argo-cd/refs/heads/main/install.sh | bash
 ```
 
 ## Step by step guide
@@ -65,8 +68,17 @@ kubectl port-forward --address 0.0.0.0 svc/argocd-server -n argocd 8080:443
 ```
 
 ### Done!
-Now you can start open an visit the port 8080 and play with your minimal kubernetes instance with Argo CD.
+Now you can start open the web UI the port 8080 and play with your minimal kubernetes instance with Argo CD.
+
+In Play-with-docker it works this way:
+![image](https://github.com/user-attachments/assets/43c33057-dfa1-48ce-a697-3582e6c36375)
+
 
 ## Did you like it?
 I hope so, don't forget to ⭐ this project!
+
 Feel free to contribute via PR.
+
+#### Further links
+You might also like [play-with-k8s](https://labs.play-with-k8s.com/) : another similar playground for kubernetes (but sadly with no port forwarding).
+
