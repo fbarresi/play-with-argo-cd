@@ -13,7 +13,8 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 echo "Installation finished!"
 echo "Wait until the pods are running..."
-kubectl wait... 
+kubectl wait pod --all --for=condition=Ready --namespace=argocd
+sleep 5s
 argocd admin initial-password -n argocd
 echo "Port forwarding active. Stop with ^C"
 echo "restart with:"
