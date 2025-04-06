@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 curl -L "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" -o kubectl
 chmod +x kubectl
 mv ./kubectl /usr/local/bin/kubectl
@@ -10,9 +11,11 @@ k3d cluster create mycluster
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
-echo "installation finished!"
-echo "Please wait until the pod is running and then run the following 2 commands"
-echo "Activate port forwarding:"
+echo "Installation finished!"
+echo "Wait until the pods are running..."
+kubectl wait... 
+argocd admin initial-password -n argocd
+echo "Port forwarding active. Stop with ^C"
+echo "restart with:"
 echo "kubectl port-forward --address 0.0.0.0 svc/argocd-server -n argocd 8080:443"
-echo "Retrieve initial password:"
-echo "argocd admin initial-password -n argocd"
+kubectl port-forward --address 0.0.0.0 svc/argocd-server -n argocd 8080:443
